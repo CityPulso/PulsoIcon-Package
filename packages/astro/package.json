@@ -41,7 +41,7 @@
     "build": "test -f src/index.ts || (echo 'src/index.ts is generated: run npm run gen at the repository root' && exit 1)",
     "prepack": "node ../../scripts/pack-files.mjs",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run",
+    "test": "vitest run --config ../../tests/config/vitest/astro.config.ts",
     "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {

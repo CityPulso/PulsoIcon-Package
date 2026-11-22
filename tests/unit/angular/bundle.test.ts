@@ -15,7 +15,7 @@ async function bundle(source: string): Promise<string> {
     minify: true,
     treeShaking: true,
     external: ["@angular/*", "motion", "tslib"],
-    alias: { "pulsoicon-angular": path.join(here, "..", "dist", "fesm2022", "pulsoicon-angular.mjs") },
+    alias: { "pulsoicon-angular": path.join(here, "../../../packages/angular/dist/fesm2022/pulsoicon-angular.mjs") },
     logLevel: "silent",
   });
   return out.outputFiles[0].text;

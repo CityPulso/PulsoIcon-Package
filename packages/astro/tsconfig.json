@@ -23,7 +23,7 @@
   "include": [
     "astro-modules.d.ts",
     "src/**/*.ts",
-    "tests",
-    "vitest.config.ts"
+    "../../tests/unit/astro",
+    "../../tests/config/vitest/astro.config.ts"
   ]
 }

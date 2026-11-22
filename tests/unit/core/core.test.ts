@@ -8,7 +8,7 @@ import { ICON_NAMES, ICONS } from "pulsoicon-core/all";
 import { ICON_NAMES as NAMES } from "pulsoicon-core/names";
 import { describe, expect, it } from "vitest";
 
-const iconsDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "src", "icons");
+const iconsDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../packages/core/src/icons");
 
 describe("icon data", () => {
   it("has one icon per file, keyed by the file name", () => {

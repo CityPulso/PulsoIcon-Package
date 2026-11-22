@@ -20,9 +20,9 @@
     "set-version": "tsx scripts/version.ts",
     "version:check": "tsx scripts/version.ts --check",
     "build": "npm run gen && npm run build --workspaces",
-    "typecheck": "npm run typecheck --workspaces",
-    "test": "npm test --workspaces",
-    "test:browser": "node tests/browser/motion-parity.mjs",
+    "typecheck": "tsc -p tests/config/tsconfig.json && npm run typecheck --workspaces",
+    "test": "vitest run --config tests/config/vitest/structure.config.ts && npm test --workspaces",
+    "test:browser": "node tests/e2e/motion/motion-parity.spec.mjs",
     "preview": "tsx scripts/preview.ts",
     "preview:react": "tsx scripts/preview.ts react",
     "preview:vue": "tsx scripts/preview.ts vue",
@@ -32,7 +32,7 @@
     "preview:angular": "tsx scripts/preview.ts angular",
     "preview:astro": "tsx scripts/preview.ts astro",
     "readme:gif": "tsx scripts/readme-gif/record.ts",
-    "prettier": "prettier --write \"{packages/core/src,packages/*/tests,packages/react/src/runtime,packages/angular/src,preview,scripts,tests}/**/*.{ts,tsx,mjs,css,html}\" packages/vue/src/createIcon.ts packages/solid/src/createIcon.ts packages/preact/src/createIcon.ts packages/astro/src/client.ts packages/astro/src/types.ts \"preview/**/*.vue\"",
+    "prettier": "prettier --write \"{packages/core/src,packages/react/src/runtime,packages/angular/src,preview,scripts,tests}/**/*.{ts,tsx,mjs,css,html}\" packages/vue/src/createIcon.ts packages/solid/src/createIcon.ts packages/preact/src/createIcon.ts packages/astro/src/client.ts packages/astro/src/types.ts \"preview/**/*.vue\"",
     "import-solid": "tsx .scripts/import-solid.ts && npm run prettier"
   },
   "devDependencies": {

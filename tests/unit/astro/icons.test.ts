@@ -9,11 +9,11 @@ import { ICONS as DATA } from "pulsoicon-core/all";
 import { ICON_NAMES } from "pulsoicon-astro/names";
 import { beforeAll, describe, expect, it } from "vitest";
 
-import Bell from "../src/icons/bell.astro";
-import Calendar from "../src/icons/calendar.astro";
-import Icon from "../src/Icon.astro";
+import Bell from "../../../packages/astro/src/icons/bell.astro";
+import Calendar from "../../../packages/astro/src/icons/calendar.astro";
+import Icon from "../../../packages/astro/src/Icon.astro";
 
-const src = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "src");
+const src = path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../packages/astro/src");
 
 let container: AstroContainer;
 beforeAll(async () => {

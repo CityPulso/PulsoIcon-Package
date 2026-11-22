@@ -11,6 +11,6 @@
       "pulsoicon-core/*": ["../core/src/*"]
     }
   },
-  "include": ["src", "all", "names", "tests"],
+  "include": ["src", "all", "names", "../../tests/unit/angular"],
   "exclude": ["dist", "node_modules"]
 }

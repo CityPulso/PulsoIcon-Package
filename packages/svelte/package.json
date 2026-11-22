@@ -54,7 +54,7 @@
     "build": "rm -rf dist && svelte-package -i src -o dist",
     "prepack": "node ../../scripts/pack-files.mjs",
     "typecheck": "svelte-check --tsconfig ./tsconfig.check.json --threshold error",
-    "test": "vitest run",
+    "test": "vitest run --config ../../tests/config/vitest/svelte.config.ts",
     "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {

@@ -8,7 +8,7 @@ import { iconSpec } from "pulsoicon-react/runtime/createIcon.js";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
-const iconsDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "core", "src", "icons");
+const iconsDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../packages/core/src/icons");
 const SHAPE = /<(path|line|circle|rect|ellipse|polyline|polygon)\b/g;
 
 describe("icon set", () => {

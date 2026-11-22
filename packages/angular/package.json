@@ -25,7 +25,7 @@
   "scripts": {
     "build": "rm -rf dist && ng-packagr -p ng-package.json -c tsconfig.lib.json && cp ../../LICENSE dist/",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run",
+    "test": "vitest run --config ../../tests/config/vitest/angular.config.ts",
     "prepublishOnly": "node -e \"process.exit(process.cwd().endsWith('dist') ? 0 : (console.error('Publish packages/angular/dist (the ng-packagr output), not packages/angular.'), 1))\""
   },
   "dependencies": {

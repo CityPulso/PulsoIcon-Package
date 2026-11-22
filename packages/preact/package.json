@@ -52,7 +52,7 @@
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "prepack": "node ../../scripts/pack-files.mjs",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run",
+    "test": "vitest run --config ../../tests/config/vitest/preact.config.ts",
     "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {

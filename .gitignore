@@ -19,3 +19,6 @@ Package.resolved
 packages/*/LICENSE
 packages/svelte/.svelte-kit/
 .astro/
+
+# Test output
+tests/.output/

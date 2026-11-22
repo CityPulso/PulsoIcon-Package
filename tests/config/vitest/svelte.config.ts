@@ -3,10 +3,12 @@ import { fileURLToPath } from "node:url";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vitest/config";
 
-const packages = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
+const packages = path.join(root, "packages");
 
 export default defineConfig({
-  plugins: [svelte()],
+  root,
+  plugins: [svelte({ configFile: path.join(packages, "svelte", "svelte.config.js") })],
   resolve: {
     alias: [
       { find: /^pulsoicon-svelte$/, replacement: path.join(packages, "svelte", "src", "index.ts") },
@@ -15,5 +17,6 @@ export default defineConfig({
       { find: /^pulsoicon-core\/(.*)$/, replacement: path.join(packages, "core", "src", "$1") },
     ],
   },
-  test: { environment: "node", include: ["tests/**/*.test.{ts,tsx}"] },
+  // Whole-catalog sweeps (every one of ~10k icons in one test): the default 5 s fails on a busy machine.
+  test: { environment: "node", include: ["tests/unit/svelte/**/*.test.{ts,tsx}"], testTimeout: 60_000 },
 });

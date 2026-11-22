@@ -1,4 +1,4 @@
-// node tests/browser/motion-parity.mjs [key …]: React (pulsoicon-react), pulsoicon-core/dom and the Vue, Svelte, Solid and Preact packages
+// node tests/e2e/motion/motion-parity.spec.mjs [key …]: React (pulsoicon-react), pulsoicon-core/dom and the Vue, Svelte, Solid and Preact packages
 // must be in the same state at the same moments.
 import { build } from "esbuild";
 import { readFile } from "node:fs/promises";
@@ -7,11 +7,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const pkg = (p) => path.join(root, "packages", p);
 const alias = Object.fromEntries(["react", "core", "vue", "svelte", "solid", "preact"].map((p) => [`pulsoicon-${p}`, pkg(`${p}/src/index.ts`)]));
 const out = await build({
-  entryPoints: [path.join(root, "tests/browser/motion-parity.entry.tsx")],
+  entryPoints: [path.join(root, "tests/support/e2e/motion-parity.entry.tsx")],
   bundle: true,
   write: false,
   format: "iife",
